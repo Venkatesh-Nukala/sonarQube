@@ -30,8 +30,3 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=Venkatesh-Nukala_sonarQube
-            -Dsonar.organization=venkatesh-nukala
-            -Dsonar.host.url=https://sonarcloud.io
