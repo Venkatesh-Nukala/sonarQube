@@ -1,9 +1,8 @@
 function greet(name) {
-    if(name == null){   // code smell (== instead of ===)
-        console.log("Hello Guest")
-    } else {
-        console.log("Hello " + name)
+    if (name === null || name === undefined) {
+        return "Hello Guest";
     }
+    return "Hello " + name;
 }
 
-greet()
+module.exports = greet;
