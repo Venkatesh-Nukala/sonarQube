@@ -13,13 +13,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # ✅ Fix shallow clone issue
+          fetch-depth: 0
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=Venkatesh-Nukala_sonarQube
             -Dsonar.organization=venkatesh-nukala
             -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}   # ✅ Updated
